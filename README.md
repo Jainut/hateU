@@ -12,3 +12,4 @@
 POST /registrar  
 GET /listar  
 DELETE /deletar/:id
+PUT /editar/:id
