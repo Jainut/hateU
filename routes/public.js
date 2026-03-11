@@ -57,4 +57,31 @@ router.delete('/deletar/:id', async (req, res) => {
         }
     )
 
+router.put('/editar/:id', async (req, res) => {
+    const { id } = req.params
+    const data = req.body
+    const salt = await bcrypt.genSalt(10)
+    const hashPassword = await bcrypt.hash(data.password, salt)
+
+    try {
+        const userEdit = await prisma.user.update ({
+            where: {
+                id: id
+            },
+            data: {
+                name: data.name,
+                email: data.email,
+                age: data.age,
+                password: hashPassword
+            }
+        })
+        res.json(userEdit)
+
+    } catch(err) {
+        console.log(err)
+
+        res.status(500).json({message: "Servidor instável, impossível alterar no momento"})
+    }
+})
+
 export default router
