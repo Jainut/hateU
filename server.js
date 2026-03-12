@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.use('/', publicRouter, () => {
-    res.send("Rodando essa bomba 🔥🔥🔥")
+    res.send("Rodando essa bomba 🔥")
 })
 
 app.listen(3000, () => {console.log("Desgraça sô")})
