@@ -12,6 +12,9 @@ router.post('/registrar', async (req, res) => {
     const hashPassword = await bcrypt.hash(user.password, salt)
 
     try {
+        if (user.name == "" || user.email == "" || user.password == "") {
+            return res.status(500).json({message: "Campos inválidos, tente novamente"})
+        } else {
         const newUser = await prisma.user.create ( {
         data: {
             name: user.name,
@@ -20,13 +23,14 @@ router.post('/registrar', async (req, res) => {
             password: hashPassword
         }
         })
+    }
     }catch (err) {
         console.error(err)
 
         return res.status(500).json({message: "Servidor instável, tente novamente mais tarde"})
     }
 
-    res.status(200).json({message:`Funcionou essa bosta, ${req.body}`}) 
+    res.status(200).json({message:`Sucesso! Usuário registrado êxito!`}) 
 })
 
 router.get('/listar', async (req, res) => {
