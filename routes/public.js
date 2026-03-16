@@ -77,7 +77,8 @@ router.put('/editar/:id', async (req, res) => {
             data: {
                 name: data.name,
                 email: data.email,
-                age: data.age,
+                curse: data.curse,
+                turma: data.turma,
                 password: hashPassword
             }
         })
