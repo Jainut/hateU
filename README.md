@@ -9,7 +9,7 @@
 
 ## Routes
 
-POST /registrar  
-GET /listar
-PUT /editar/:id 
-DELETE /deletar/:id
+- POST /registrar  
+- GET /listar
+- PUT /editar/:id 
+- DELETE /deletar/:id
