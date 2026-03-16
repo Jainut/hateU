@@ -18,8 +18,10 @@ router.post('/registrar', async (req, res) => {
         const newUser = await prisma.user.create ( {
         data: {
             name: user.name,
-            age: user.age,
             email: user.email,
+            curse: user.curse,
+            turma: user.turma,
+            phone: user.phone,
             password: hashPassword
         }
         })
