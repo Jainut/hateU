@@ -4,12 +4,12 @@
 - Node.js
 - Express
 - Prisma
-- MongoDB
+- Supabase (PostgreSQL)
 - Bcrypt
 
 ## Routes
 
 POST /registrar  
-GET /listar  
+GET /listar
+PUT /editar/:id 
 DELETE /deletar/:id
-PUT /editar/:id
