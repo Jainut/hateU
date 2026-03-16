@@ -7,7 +7,7 @@
 - Supabase (PostgreSQL)
 - Bcrypt
 
-## Routes
+## Routess
 
 - POST /registrar  
 - GET /listar
