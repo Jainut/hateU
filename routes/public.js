@@ -29,7 +29,7 @@ router.post('/registrar', async (req, res) => {
     }catch (err) {
         console.error(err)
 
-        return res.status(500).json(err)
+        return res.status(500).json({message: "Servidor instável, tente novamente mais tarde"})
     }
 
     res.status(200).json({message:`Sucesso! Usuário registrado êxito!`}) 
